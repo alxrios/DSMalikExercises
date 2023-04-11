@@ -3,8 +3,8 @@
 class Menu {
 	public:
 		static void display(RomanType&); 
-		// Calls the corresponding function
-		// according to user option
+			// Calls the corresponding function
+			// according to user option
 		static void text(); 
-		// Menu's options text
+			// Menu's options text
 };
