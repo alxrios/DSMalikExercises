@@ -11,7 +11,6 @@ void Menu::display(RomanType& roman) {
 		switch(option) {
 			case 1:
 				std::cout << "Which roman numeral do you want to introduce? ";
-				// std::string newRom;
 				std::cin >> newRomanNum;
 				roman.setNewRoman(newRomanNum);
 				break;
