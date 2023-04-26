@@ -1,5 +1,5 @@
-#include "BookType.h"
 #include <iostream>
+#include "utilities.h"
 
 BookType::BookType() {
 	title = "";
@@ -18,7 +18,10 @@ BookType::BookType(int inputISBN[10]) {
 		std::cout << "\nISBN passed as parameter to the constructor\n"
 			"is incorrect, please introduce it again:\n";
 		setISBN();
+	} else {
+		std::cout << "\nISBN OK INSIDE CONSTRUCTOR";
 	}
+	ISBNtoStr();
 }
 
 BookType::BookType(std::string bookTitle, int bookISBN[]) {
@@ -31,16 +34,18 @@ BookType::BookType(std::string bookTitle, int bookISBN[]) {
 			"is incorrect, please introduce it again:\n";
 		setISBN();
 	}
+	ISBNtoStr();
 }
 
 void BookType::setISBN() {
+	// Note X must be introduced as 10
 	bool inputok = 0;
 	int num = 0;
 	int i;
 	
 	while (!inputok) {
 		for (i = 0; i < 10; i++) {
-			std::cout << "\nPlease, introduce digit number " << i + 1 << ": ";
+			std::cout << "\nPlease, introduce ISBN digit number " << i + 1 << ": ";
 			std::cin >> num;
 			ISBN[i] = num;
 		}
@@ -53,12 +58,17 @@ void BookType::setISBN() {
 			std::cout << "\nISBN input is correct.\n";
 		}
 	}
+	ISBNtoStr();
 }
 
 void BookType::showISBN() {
 	std::cout << "\nISBN: ";
 	for (int i = 0; i < 10; i++) {
-		std::cout << ISBN[i];
+		if (ISBN[i] == 10) {
+			std::cout << 'X';
+		} else {
+			std::cout << ISBN[i];
+		}
 	}
 	std::cout << "\n";
 }
@@ -69,12 +79,12 @@ bool BookType::checkISBN() {
 	int sum = 0;
 	int i;
 	
-	for (i = 0; i <= 9; i++) {
+	for (i = 1; i <= 9; i++) {
 		sum += (11 - i)*ISBN[i - 1];
 	}
 	
 	int correctLast = -1;
-	for (i = 1; i < 11; i++) {
+	for (i = 0; i < 11; i++) {
 		if (((sum + i) % 11 ) == 0) {
 			correctLast = i;
 			break;
@@ -93,7 +103,10 @@ bool BookType::checkISBN() {
 void BookType::setTitle() {
 	std::cout << "\nIntroduce book's title: ";
 	getline(std::cin, title);
-	// std::cout << "You have introduced: " << title << "\n";
+}
+
+void BookType::setTitle(std::string newTitle) {
+	title = newTitle;
 }
 
 void BookType::showTitle() {
@@ -178,5 +191,71 @@ void BookType::showAuthors() {
 }
 
 void BookType::ISBNtoStr() {
-	
+	std::string resultISBN = "";
+	for (int i = 0; i < 10; i++) {
+		resultISBN.append(std::string(1, static_cast<char>(Ascii::ASCIIconvert(ISBN[i]))));
+	}
+	strISBN = resultISBN;
+}
+
+
+std::string BookType::getStrISBN() {
+	return(strISBN);
+}
+
+int BookType::getNumOfAuthors() {
+	return(numOfAuthors);
+}
+
+std::string BookType::getAuthor(int num) {
+	// Note: num can be 0, 1, 2 or 3
+	return(authors[num]);
+}
+
+float BookType::getPrice() {
+	return(price);
+}
+
+int BookType::getNumCopies() {
+	return(copiesStock);
+}
+
+std::string BookType::getPublisher() {
+	return(publisher);
+}
+
+void BookType::setISBN(std::string ISBNstring) {
+	strISBN = ISBNstring;
+	ISBNtoInt();
+}
+
+void BookType::ISBNtoInt() {
+	for (int i = 0; i < 9; i++) {
+		ISBN[i] = static_cast<int>(strISBN[i]) - 48;
+	}
+	if (strISBN[9] == 'X') {
+		ISBN[9] = 10;
+	} else {
+		ISBN[9] = static_cast<int>(strISBN[9]) - 48;
+	}
+}
+
+void BookType::setAuthor(std::string authorName, int index) {
+	authors[index] = authorName;
+}
+
+void BookType::setNumOfAuthors(int number) {
+	numOfAuthors = number;
+}
+
+void BookType::setPrice(float priceValue) {
+	price = priceValue;
+}
+
+void BookType::setNumberOfCopies(int numCopies) {
+	copiesStock = numCopies;
+}
+
+void BookType::setPublisher(std::string publisherName) {
+	publisher = publisherName;
 }
