@@ -1,7 +1,8 @@
+#include "utilities.h"
 
 class Menu {
 	public:
-		static void display();
+		static void display(BooksShelf &);
 			// Displays the menu and applies the desired option
 	private:
 		static void text();
