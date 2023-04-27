@@ -1,0 +1,13 @@
+In this exercise, you will design a class memberType.
+a. Each object memberType can hold the name of a person, member ID, number of
+books bought, and amount spent.
+
+b. Include the member functions to perform the various operations on the objects of
+memberType, for example, modify, set, and show a person's name. Similarly,
+update, modify, and show the number of books bought and the amount spent.
+
+c. Add the appropriate constructors.
+
+d. Write the definitions of the member functions of memberType.
+
+e. Write a program to test various operations of your class memberType.
