@@ -1,0 +1,72 @@
+
+This programming example further illustrates the concepts of inheritance and
+composition.
+Thie mid-semester point at your local university is approaching. The registar's office
+wants to prepare the grade reports as soon as the student's grades are recorded. However,
+some of the students enrolled have not yet paid their tuition.
+	1. If a student has paid the tuition, the grades are shown on the grade report
+	   toguether with the grade-point average (GPA).
+	2. If a student has not paid the tuition, the grades are not printed. For these students,
+	   the grade report contains a message indicating that the grades have been held for
+	   nonpayment of the tuition. The grade report also shows the billing amount.
+The registar's office and the business, office want your help in writing a program that
+can analyze the student's data and print the appropriate grade reports. The data is stored
+in a file in the following form:
+
+15000 345
+studentName studentID isTuitionPaid numberOfCourses
+courseName courseNumber creditHours grade
+courseName courseNumber creditHours grade
+.
+.
+.
+studentName studentID isTuitionPaid numberOfCourses
+courseName courseNumber creditHours grade
+courseName courseNumber creditHours grade
+.
+.
+.
+The first line indicates the number of students enrolled and the tuition rate per credit
+hour. The student's data is given thereafter.
+
+A sample input file is as follows:
+
+3 345
+Lisa Miller 890238 Y 4
+Mathematics MTH345 4 A
+Physics PHY357 3 B
+ComputerSci CSC478 3 B
+History HIS356 3 A
+.
+.
+.
+The first line indicates that the input file contains 3 student's data and the tuition rate
+is $345 per credit hour. Next, the course data for student Lisa Miller is given: Lisa
+Miller's ID is 890238, she has paid the tuition, and is taking 4 courses. The course num-
+ber for the mathematics class she is taking is MTH345, the course has 4 credit hours, her
+mid-semester grade is A, and so on.
+
+The desired output for each student is in the following form:
+
+Student Name: Lisa Miller
+Sutdent ID: 890238
+Number of courses enrolled: 4
+
+Course No Course Name Credits Grade
+CSC478    ComputerSci      3      B
+HIS356    History          3      A
+MTH345    Mathematics      4      A
+PHY357    Physics          3      B
+
+Total number of credits: 13
+Mid-Semester GPA: 3.54
+
+It is clear from this output that the courses must be ordered according to the course
+number. To calculate the GPA, we assume that the grade A is equivalent to 4 points, B is
+equivalent to 3 points, C is equivalent to 2 points. D is equivalent to 1 point, and F is
+equivalent to 0 points.
+
+Input A file containing the data in the form given previously. For easy reference, let us
+assume that the name of the input file is stData.txt
+
+Output A file containing the output in the form given previously.
