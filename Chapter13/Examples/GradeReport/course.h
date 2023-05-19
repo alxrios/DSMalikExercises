@@ -1,6 +1,6 @@
 #ifndef H_course
 #define H_course
-#include<string>
+#include <string>
 
 class Course {
 	public:
