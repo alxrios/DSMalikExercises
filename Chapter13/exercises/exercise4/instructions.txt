@@ -1,0 +1,16 @@
+Amanda and Tyler opened a business that specializes in shipping liquids, such
+as milk, juice, and water, in cylinderical containers. The shipping charges
+depend on the amount of the liquid in the container. (For simplicity, you
+may assume that the container is filled to the top.) They also provide the
+option to paint the outside of the container for a reasonable amount. Write a
+program that does the following:
+a. Prompts the user to input the dimensions (in feet) of the container
+(radius of the base and the height).
+b. Prompts the user to input the shipping cost per liter.
+c. Prompts the user to input the paint cost per square foot. (Assume that
+the entire container including the top and bottom needs to be painted.)
+d. Separately outputs the shipping cost and the cost of painting.
+Your program must use the class cylinderType (designed in
+Programming Exercise 3) to store the radius of the base and the height
+of the container. (Note that 1 cubic feet ¼ 28.32 liters or 1 liter ¼
+0.353146667 cubic feet.)
