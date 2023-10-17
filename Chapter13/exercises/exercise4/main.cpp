@@ -5,7 +5,7 @@
 int main()
 {
 	double r, h, scostL, pcostF;
-    std::cout << "\nPlease, input the dimensions (in feet) of the container...\n\n";
+	std::cout << "\nPlease, input the dimensions (in feet) of the container...\n\n";
 	std::cout << "Radius of the base: ";
 	std::cin >> r;
 	std::cout << "\nHeigth of the cylinder: ";
