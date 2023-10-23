@@ -1,0 +1,55 @@
+Pelican Street
+San Diego
+California
+96162
+4
+2002
+5
+John
+Doe
+family
+555-888-333
+Bear Street
+Chicago
+Illinois
+40083
+3
+1999
+21
+Farah
+Jones
+friend
+777-333-222
+Romeo avenue
+Manhattan
+New York
+10016
+9
+2004
+23
+Martha
+Stewart
+business
+777-235-963
+Pasadena Highlands
+Houston
+Texas
+77005
+4
+1998
+6
+Martin
+Oak
+friend
+633-789-456
+Des Peres
+St. Louis
+Missouri
+63107
+12
+1997
+14
+Robert
+Spencer
+family
+444-555-666
