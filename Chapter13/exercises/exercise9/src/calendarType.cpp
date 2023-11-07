@@ -1,5 +1,4 @@
 #include "calendarType.h"
-
 #include <iostream>
 #include <iomanip>
 
